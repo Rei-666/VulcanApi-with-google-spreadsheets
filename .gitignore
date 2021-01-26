@@ -1,0 +1,7 @@
+*.json
+*.db
+*.sqlite
+venve
+__pycache__
+.idea
+config.py
