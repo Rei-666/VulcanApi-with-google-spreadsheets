@@ -1,0 +1,3 @@
+
+class NotEnoughSpace(Exception):
+    pass
