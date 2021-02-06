@@ -38,6 +38,7 @@ timetable = Timetable(cfg['TIMETABLE_DIR']).timetable
 
 def get_homework_list(date_from=None):
     date_now = datetime.datetime.now().date()
+    date_week_ahead = date_now + datetime.timedelta(weeks=1)
     if not date_from:
         date_from = date_now - datetime.timedelta(days=7)
 
@@ -60,3 +61,7 @@ def get_homework_list(date_from=None):
                                                description=homework.description)
                 homework_list.append(new_homework)
     return homework_list
+
+from VulcanHebe.AccountManager import AccountHandler
+
+account_handler = AccountHandler()
