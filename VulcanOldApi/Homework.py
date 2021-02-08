@@ -1,10 +1,9 @@
-from Pastebin import PastebinClient
 from Exceptions import *
 from sqlalchemy import Column, String, Integer, Date
 from sqlalchemy.ext.declarative import declarative_base
 from config import cfg
-import Rentry
-import datetime
+from GenerateLinks import Rentry
+from GenerateLinks.Pastebin import PastebinClient
 import re
 
 base = declarative_base()
@@ -13,7 +12,6 @@ pastebinClient = PastebinClient(cfg['PASTEBIN_API_TOKEN'])
 
 
 class Homework(base):
-
     __tablename__ = "Homeworks"
     id = Column(Integer, primary_key=True)
     date = Column(Date)

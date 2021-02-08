@@ -61,7 +61,3 @@ def get_homework_list(date_from=None):
                                                description=homework.description)
                 homework_list.append(new_homework)
     return homework_list
-
-from VulcanHebe.AccountManager import AccountHandler
-
-account_handler = AccountHandler()
