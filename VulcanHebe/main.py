@@ -1,6 +1,10 @@
 from VulcanHebe.KeystoreFileManager import KeystoreFileManager
 from VulcanHebe.AccountFileManager import AccountFileManager
+from VulcanHebe.HomeworkGetter import HomeworkGetter
+from VulcanHebe.DatabaseConnectionCreator import DatabaseConnectionCreator
+from VulcanHebe.Homework import Homework
 from vulcan import VulcanHebe
+from config import cfg
 import asyncio
 
 
@@ -15,6 +19,14 @@ async def main():
 
     await client.select_student()
 
+    homework_getter = HomeworkGetter(client)
+    homeworks = await homework_getter.get_homework_list()
+
+    for homework in homeworks:
+        print(f'{homework.attachments}')
+
+    session = DatabaseConnectionCreator(cfg['DATABASE'])
+    print(session.query(Homework).first())
     await client.close()
 
 
