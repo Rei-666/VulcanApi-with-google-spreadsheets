@@ -1,9 +1,10 @@
 *.json
 *.db
 *.sqlite
-venve
+env
 __pycache__
 .idea
 config.py
 run.ps1
 run.bat
+timetable.json
