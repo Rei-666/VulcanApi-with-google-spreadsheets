@@ -11,7 +11,7 @@ import datetime
 
 if __name__ == "__main__":
 
-    engine = create_engine('sqlite:///db.db')
+    engine = create_engine(cfg['DATABASE'])
 
     Session = sessionmaker(bind=engine)
     session = Session()
