@@ -25,8 +25,6 @@ async def main():
     for homework in homeworks:
         print(f'{homework.attachments}')
 
-    session = DatabaseConnectionCreator(cfg['DATABASE'])
-    print(session.query(Homework).first())
     await client.close()
 
 
