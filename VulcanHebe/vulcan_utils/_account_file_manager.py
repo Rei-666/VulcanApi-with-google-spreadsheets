@@ -1,5 +1,6 @@
 from vulcan import Account
-from VulcanHebe.FileManager import FileManager
+
+from VulcanHebe.vulcan_utils import FileManager
 
 
 class AccountFileManager(FileManager):

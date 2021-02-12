@@ -11,4 +11,3 @@ class DatabaseConnectionCreator:
         Session = sessionmaker(bind=engine)
         base.metadata.create_all(engine)
         return Session()
-

@@ -1,3 +1,2 @@
-
-class NotEnoughSpace(Exception):
+class SubjectNotInTimetable(Exception):
     pass
